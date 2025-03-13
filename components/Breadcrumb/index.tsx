@@ -7,7 +7,7 @@ interface BreadcrumbProps {
 
 export const Breadcrumb = ({ paths }: BreadcrumbProps) => {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 bg-gray-50 p-3 rounded-lg">
+    <nav aria-label="Breadcrumb" className="mb-6 bg-[#0e0e0e] p-3 rounded-lg ">
       <ol className="flex flex-wrap items-center text-sm text-gray-600">
         {paths.map((item, index) => (
           <li key={item.path} className="flex items-center">
@@ -16,9 +16,9 @@ export const Breadcrumb = ({ paths }: BreadcrumbProps) => {
             )}
 
             {index === paths.length - 1 ? (
-              <span className="font-medium text-gray-900">{item.name}</span>
+              <span className="font-medium text-[#2aff7bbd]">{item.name}</span>
             ) : (
-              <Link href={item.path} className="hover:text-gray-900">
+              <Link href={`${item.path}`} className="hover:text-[#2aff7bbd]">
                 {item.name}
               </Link>
             )}

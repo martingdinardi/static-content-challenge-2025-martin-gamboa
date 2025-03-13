@@ -240,7 +240,7 @@ export function getBreadcrumbPaths(
     { name: "Markdowns", path: "/markdowns" },
   ];
 
-  let currentPath = "";
+  let currentPath = "/markdowns";
   for (const part of parts) {
     currentPath += `/${part}`;
     paths.push({

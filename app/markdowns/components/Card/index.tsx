@@ -18,7 +18,7 @@ export interface CardHeaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CardHeader = ({ children, ...props }: CardHeaderProps) => (
-  <div className="p-6 border-b border-gray-200" {...props}>
+  <div className="border-b border-gray-200" {...props}>
     {children}
   </div>
 );
@@ -28,7 +28,7 @@ export interface CardTitleProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 const CardTitle = ({ children, ...props }: CardTitleProps) => (
-  <h3 className="text-xl font-semibold" {...props}>
+  <h3 className="text-base font-semibold" {...props}>
     {children}
   </h3>
 );
@@ -49,7 +49,7 @@ export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const CardContent = ({ children, ...props }: CardContentProps) => (
-  <div className="p-6" {...props}>
+  <div className="" {...props}>
     {children}
   </div>
 );

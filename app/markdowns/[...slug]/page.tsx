@@ -1,6 +1,6 @@
 import { getBreadcrumbPaths, getContentBySlug } from "@/lib/content";
 import MarkdownRenderer from "../components/MarkdownRenderer";
-import { DirectoryList } from "@/components/DirectoryList";
+import { DirectoryList } from "@/app/markdowns/components/DirectoryList";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { notFound } from "next/navigation";
 
@@ -20,13 +20,13 @@ export default async function Page(props: PageProps) {
     const breadcrumbPaths = getBreadcrumbPaths(path);
 
     return (
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mt-4">
         <Breadcrumb paths={breadcrumbPaths} />
 
         {content ? (
           <MarkdownRenderer content={content} metadata={metadata} />
         ) : (
-          <h1 className="text-2xl font-bold mb-6">
+          <h1 className="text-3xl font-bold mb-6">
             {metadata.title ||
               breadcrumbPaths[breadcrumbPaths.length - 1]?.name}
           </h1>

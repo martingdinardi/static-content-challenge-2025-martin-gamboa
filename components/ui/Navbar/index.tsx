@@ -5,6 +5,6 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ children, className }: NavbarProps) => {
+export const Navbar = ({ children, className = "" }: NavbarProps) => {
   return <nav className={`py-4 ${className}`}>{children}</nav>;
 };
