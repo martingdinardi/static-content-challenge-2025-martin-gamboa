@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from "@/components/ui/Navbar";
 import { getContentSections } from "@/lib/content";
 import Link from "next/link";
 
