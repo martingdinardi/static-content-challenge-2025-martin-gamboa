@@ -2,7 +2,7 @@ export const infoConent = [
   {
     title: "How it works",
     description:
-      "The system reads Markdown files from the markdowns folder and generates HTML pages based on the folder structure.",
+      "The system reads Markdown files from the content folder and generates HTML pages based on the folder structure.",
   },
   {
     title: "Content",
@@ -17,6 +17,6 @@ export const infoConent = [
   {
     title: "Content Editing",
     description:
-      "To edit or add content, create a folder in the markdowns directory, add an index.md file in Markdown format, and include YAML metadata in the header.",
+      "To edit or add content, create a folder in the content directory, add an index.md file in Markdown format, and include YAML metadata in the header.",
   },
 ];

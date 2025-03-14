@@ -1,12 +1,7 @@
 import Link from "next/link";
 import Folder from "../Folder";
 import { DirectoryInfo } from "@/lib/types";
-import { formatDate } from "@/lib/utils";
-import {
-  IconFolder,
-  IconArrowUpRight,
-  IconCalendar,
-} from "@tabler/icons-react";
+import { IconFolder, IconArrowUpRight } from "@tabler/icons-react";
 
 interface DirectoryListProps {
   directories: DirectoryInfo[];
@@ -22,7 +17,7 @@ export const DirectoryList = ({ directories, title }: DirectoryListProps) => {
       </p>
 
       {directories.length > 0 && (
-        <>
+        <div className="flex flex-wrap gap-6">
           {directories.map((dir) => (
             <Link href={`/markdowns/${dir.path}`} key={dir.path}>
               <Folder className="overflow-hidden flex border rounded-xl items-center justify-between py-4 px-6 w-fit gap-12 border-zinc-600 group hover:border-[#2aff7b] hover:scale-105 transition-all duration-500">
@@ -31,18 +26,7 @@ export const DirectoryList = ({ directories, title }: DirectoryListProps) => {
                   <Folder.Title>{dir.title}</Folder.Title>
                 </Folder.Header>
                 <Folder.Content>
-                  {dir.description && (
-                    <Folder.Description className="mb-4 line-clamp-2">
-                      {dir.description}
-                    </Folder.Description>
-                  )}
                   <div className="flex justify-between items-center">
-                    {dir.date && (
-                      <div className="flex items-center text-sm text-indigo-50">
-                        <IconCalendar className="h-4 w-4 mr-1" />
-                        <span>{formatDate(dir.date)}</span>
-                      </div>
-                    )}
                     <div className="flex gap-1 items-center">
                       <div className="overflow-hidden">
                         <div className="text-indigo-50 relative">
@@ -67,7 +51,7 @@ export const DirectoryList = ({ directories, title }: DirectoryListProps) => {
               </Folder>
             </Link>
           ))}
-        </>
+        </div>
       )}
     </div>
   );

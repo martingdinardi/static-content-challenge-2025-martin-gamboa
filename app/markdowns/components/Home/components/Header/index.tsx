@@ -4,7 +4,7 @@ import { IconCircleFilled } from "@tabler/icons-react";
 function Header() {
   return (
     <div>
-      <div className="w-1/2 py-8">
+      <div className="lg:w-1/2 py-8">
         <span className="text-xs flex items-center gap-1 mb-2">
           <IconCircleFilled
             width={14}

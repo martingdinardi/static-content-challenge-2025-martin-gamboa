@@ -11,11 +11,9 @@ function MarkdownRenderer({ content, metadata }: ContentRendererProps) {
       {metadata.title && (
         <header className="mb-8">
           <h1 className="text-3xl font-bold">{metadata.title}</h1>
-          {metadata.description && (
-            <p className="text-gray-600 mt-2">{metadata.description}</p>
-          )}
+          {metadata.description && <p>{metadata.description}</p>}
           {metadata.date && (
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-gray-400 mt-1">
               {new Date(metadata.date).toLocaleDateString()}
             </p>
           )}
