@@ -11,7 +11,7 @@ function NotFoundPage() {
         <div className="py-4 w-full lg:w-1/2">
           <h1>Oops! </h1>
           <h2 className="!text-white">
-            We can't seem to find the page or markdown you're looking for!
+            {`We can't seem to find the page or markdown you're looking for!`}
           </h2>
           <p>Here a some helpful links instead!</p>
           <div className="py-8">

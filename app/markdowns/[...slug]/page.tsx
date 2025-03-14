@@ -5,15 +5,11 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { notFound } from "next/navigation";
 import { RecommendedArticles } from "../components/RecommendedArticles";
 
-interface PageProps {
-  params: {
-    slug: string[];
-  };
-}
+type tParams = Promise<{ slug: string[] }>;
 
-export default async function Page(props: PageProps) {
-  const params = await props.params;
-  const path = Array.isArray(params.slug) ? params.slug.join("/") : "";
+export default async function Page({ params }: { params: tParams }) {
+  const { slug }: { slug: string[] } = await params;
+  const path = Array.isArray(slug) ? slug.join("/") : "";
 
   try {
     const { content, metadata, hasSubdirectories, subdirectories } =

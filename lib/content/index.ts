@@ -16,7 +16,11 @@ async function hasIndexFile(dirPath: string): Promise<boolean> {
   try {
     await fs.access(path.join(dirPath, "index.md"));
     return true;
-  } catch (error) {
+  } catch (error: unknown) {
+    const err = error as NodeJS.ErrnoException;
+    if (err.code !== "ENOENT") {
+      console.error("Error al verificar el index.md:", error);
+    }
     return false;
   }
 }
@@ -42,6 +46,7 @@ async function getMetadataFromFile(filePath: string): Promise<Metadata> {
     const { data } = matter(fileContent);
     return data as Metadata;
   } catch (error) {
+    console.error(error);
     return {};
   }
 }
@@ -54,6 +59,7 @@ async function isValidArticle(filePath: string): Promise<boolean> {
     await fs.readFile(filePath, "utf8");
     return true;
   } catch (error) {
+    console.error(error);
     return false;
   }
 }
@@ -66,6 +72,7 @@ async function isDirectory(path: string): Promise<boolean> {
     const stat = await fs.stat(path);
     return stat.isDirectory();
   } catch (error) {
+    console.error(error);
     return false;
   }
 }
@@ -109,13 +116,7 @@ export async function getContentSections(): Promise<
         return null;
       }
 
-      let title = formatDirectoryName(entry.name);
-
-      if (hasIndex) {
-        const metadata = await getMetadataFromFile(
-          path.join(dirPath, "index.md")
-        );
-      }
+      const title = formatDirectoryName(entry.name);
 
       return {
         slug: entry.name,

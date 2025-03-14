@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { IconCircleFilled } from "@tabler/icons-react";
 
 function Header() {
@@ -15,8 +14,8 @@ function Header() {
           Hi!
         </span>
         <h1 className={"!m-0"}>
-          Welcome to Acme Co's Marketing Space! Discover, create, and manage
-          markdown-based content with ease!
+          {`Welcome to Acme Co's Marketing Space! Discover, create, and manage
+markdown-based content with ease!`}
         </h1>
       </div>
     </div>
