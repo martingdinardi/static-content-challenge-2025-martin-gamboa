@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { IconChevronRight } from "@tabler/icons-react";
 
@@ -7,8 +8,11 @@ interface BreadcrumbProps {
 
 export const Breadcrumb = ({ paths }: BreadcrumbProps) => {
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 bg-[#0e0e0e] p-3 rounded-lg ">
-      <ol className="flex flex-wrap items-center text-sm text-slate-200">
+    <nav
+      aria-label="Breadcrumb"
+      className="breadcrumb mb-6 p-3 rounded-lg transition-colors duration-300"
+    >
+      <ol className={`flex flex-wrap items-center text-sm `}>
         {paths.map((item, index) => (
           <li key={item.path} className="flex items-center">
             {index > 0 && (
@@ -16,9 +20,9 @@ export const Breadcrumb = ({ paths }: BreadcrumbProps) => {
             )}
 
             {index === paths.length - 1 ? (
-              <span className="font-medium text-[#2aff7bbd]">{item.name}</span>
+              <span className="font-bold">{item.name}</span>
             ) : (
-              <Link href={`${item.path}`} className="hover:text-[#2aff7bbd]">
+              <Link href={`${item.path}`} className="hover:font-bold">
                 {item.name}
               </Link>
             )}

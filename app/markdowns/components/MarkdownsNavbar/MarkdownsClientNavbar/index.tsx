@@ -4,6 +4,7 @@ import { useHamburger } from "@/app/markdowns/hooks/useHamburger";
 import { useMobile } from "@/app/markdowns/hooks/useMobile";
 import { isActive } from "@/app/markdowns/utils/isActive";
 import { Navbar } from "@/components/ui/Navbar";
+import { useTheme } from "@/context/ThemeContext";
 import { IconMenu3, IconX } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,6 +18,7 @@ export const MarkdownsClientNavbar = ({
   sections,
 }: MarkdownsClientNavbarProps) => {
   const pathname = usePathname();
+  const { theme } = useTheme();
 
   const { isMenuOpen, handleOpen, handleClose } = useHamburger();
 
@@ -26,11 +28,11 @@ export const MarkdownsClientNavbar = ({
   const navbarSections = sections.slice(0, 4);
 
   return (
-    <Navbar>
+    <Navbar className="markdowns-nav">
       <div className="flex justify-between items-center py-4">
-        <Link href="/markdowns">
+        <Link href="/markdowns" className="p-4 rounded-full ">
           <Image
-            src="/logo.webp"
+            src={theme === "light" ? `/logo-light.webp` : `/logo.webp`}
             alt="Acme Co."
             width={45}
             height={50}
@@ -46,8 +48,8 @@ export const MarkdownsClientNavbar = ({
                   <Link
                     key={section.slug}
                     href={`/markdowns/${section.slug}`}
-                    className={`inline-block transition duration-200 hover:scale-115 hover:text-[#2aff7b] text-lg ${
-                      active ? "text-[#2aff7b] scale-105" : ""
+                    className={`inline-block transition duration-200 hover:scale-110 hover:text-[#2aff7b] text-lg ${
+                      active ? "active scale-105" : ""
                     }`}
                   >
                     {section.title}
@@ -72,7 +74,7 @@ export const MarkdownsClientNavbar = ({
         </div>
       </div>
       {isMenuOpen && sections.length > 0 && (
-        <div className="pb-4 border-t absolute bg-[#0a0a0a] w-full border-zinc-800">
+        <div className="pb-4 border-t absolute bg-gray-800 w-full border-zinc-800">
           <div className="flex flex-col space-y-2 pt-2 gap-1 mt-4">
             {sections.map((section) => {
               const active = isActive(pathname, section.slug);

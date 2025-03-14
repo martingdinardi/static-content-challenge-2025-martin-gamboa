@@ -9,7 +9,9 @@ export function InfoContent() {
       {infoConent.map((card, index) => (
         <InfoCard key={index}>
           <div>
-            <h2 className="!m-0">{(index + 1).toString().padStart(2, "0")}.</h2>
+            <h2 className="info-index !m-0">
+              {(index + 1).toString().padStart(2, "0")}.
+            </h2>
             <h2 className="!m-0 text-[#2aff7bbd]">{card.title}</h2>
           </div>
           <p className="text-gray-300 text-xl">{card.description}</p>

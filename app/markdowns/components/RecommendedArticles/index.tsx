@@ -43,7 +43,7 @@ export const RecommendedArticles = async ({
                       </div>
                     )}
 
-                    <span className="flex items-center text-[#2aff7b] text-sm">
+                    <span className="read-more flex items-center text-sm font-bold">
                       Read More
                     </span>
                   </div>

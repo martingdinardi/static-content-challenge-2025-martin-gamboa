@@ -1,6 +1,7 @@
 import React from "react";
 import { IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 
 function Footer() {
   return (
@@ -9,14 +10,17 @@ function Footer() {
         <p>© {new Date().getFullYear()} Acme Co.</p>
       </div>
 
-      <Link
-        href="https://github.com/martingdinardi"
-        className="flex items-center justify-center space-x-1"
-        target="_blank"
-      >
-        <IconBrandGithub size={24} />
-        <p>github.com/martingdinardi</p>
-      </Link>
+      <div className="flex space-x-4">
+        <Link
+          href="https://github.com/martingdinardi"
+          className="flex items-center justify-center space-x-1"
+          target="_blank"
+        >
+          <IconBrandGithub size={24} />
+          <p>github.com/martingdinardi</p>
+        </Link>
+        <ThemeToggle />
+      </div>
     </footer>
   );
 }

@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import { IconCircleFilled } from "@tabler/icons-react";
 
 function Header() {
   return (
-    <div>
+    <div className="markdowns-header">
       <div className="lg:w-1/2 py-8">
         <span className="text-xs flex items-center gap-1 mb-2">
           <IconCircleFilled
@@ -13,7 +14,7 @@ function Header() {
           />
           Hi!
         </span>
-        <h1 className="!text-white !m-0">
+        <h1 className={"!m-0"}>
           Welcome to Acme Co's Marketing Space! Discover, create, and manage
           markdown-based content with ease!
         </h1>

@@ -5,6 +5,16 @@
   --foreground: #f1f1f1;
 }
 
+html.light {
+  --background: #f9f9f9;
+  --foreground: #2d3748;
+}
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #f1f1f1;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -13,9 +23,12 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition-property: background-color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
 }
 
 .prose h2,
@@ -28,16 +41,35 @@ body {
 }
 
 .prose {
-  @apply text-gray-800 leading-relaxed;
+  @apply leading-relaxed;
 }
 
-.prose h1, h1 {
+.prose {
+  @apply text-gray-800;
+}
+
+html.dark .prose {
+  @apply text-gray-200;
+}
+
+.prose h1,
+h1 {
   @apply text-4xl font-bold mb-4 text-[#2aff7b];
+}
+
+html.light .prose h1,
+html.light h1 {
+  @apply text-4xl font-bold mb-4 text-[#010101];
 }
 
 .prose h2,
 h2 {
-  @apply text-2xl font-bold mt-6 mb-3;
+  @apply text-2xl font-bold mt-6 mb-3 text-[#2aff7b];
+}
+
+html.light .prose h2,
+html.light h2 {
+  @apply text-2xl font-bold mt-6 mb-3 text-[#010101];
 }
 
 .prose h3 {
@@ -45,7 +77,15 @@ h2 {
 }
 
 .prose p {
-  @apply mb-4 text-white text-lg;
+  @apply mb-4 text-lg;
+}
+
+html.dark .prose p {
+  @apply text-white;
+}
+
+html.light .prose p {
+  @apply text-gray-800;
 }
 
 .prose ul,
@@ -58,11 +98,27 @@ h2 {
 }
 
 .prose ol {
-  @apply list-decimal text-[#2aff7b];
+  @apply list-decimal;
+}
+
+html.dark .prose ol {
+  @apply text-[#2aff7b];
 }
 
 .prose a {
-  @apply text-[#2aff7b] hover:underline;
+  @apply hover:underline;
+}
+
+html.dark .prose a {
+  @apply text-[#2aff7b];
+}
+
+html.light .prose a {
+  @apply text-green-600;
+}
+
+html.dark .read-more {
+  @apply text-[#2aff7b] font-light;
 }
 
 .prose blockquote {
@@ -70,9 +126,110 @@ h2 {
 }
 
 .prose code {
-  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+  @apply px-1 py-0.5 rounded text-sm;
+}
+
+html.dark .prose code {
+  @apply bg-gray-800;
+}
+
+html.light .prose code {
+  @apply bg-gray-100;
 }
 
 .prose pre {
-  @apply bg-gray-100 p-4 rounded my-4 overflow-x-auto;
+  @apply p-4 rounded my-4 overflow-x-auto;
+}
+
+html.dark .prose pre {
+  @apply bg-gray-800;
+}
+
+html.light .prose pre {
+  @apply bg-gray-100;
+}
+
+html.light .bg-zinc-900 {
+  background-color: #f1f1f1;
+}
+
+html.light .text-gray-300 {
+  color: #374151;
+}
+
+html.light .border-zinc-600 {
+  border-color: #d1d5db;
+}
+
+html.light .bg-\[\#0e0e0e\] {
+  background-color: #f1f1f1;
+}
+
+html.light .text-slate-200 {
+  color: #374151;
+}
+
+html.light .text-gray-400 {
+  color: #6b7280;
+}
+
+html.light footer.bg-\[\#0e0e0e\] {
+  background-color: #f1f1f1;
+}
+
+.markdowns-nav .active {
+  @apply text-[#2aff7b] scale-110;
+}
+
+html.light .markdowns-nav .active,
+html.light .markdowns-nav a:hover {
+  @apply font-bold text-gray-700;
+}
+
+.breadcrumb {
+  @apply bg-gray-100;
+}
+
+.breadcrumb ol {
+  @apply text-gray-700;
+}
+
+html.dark .breadcrumb span,
+html.dark .breadcrumb a:hover {
+  @apply font-medium text-[#2aff7b];
+}
+
+html.dark .breadcrumb {
+  @apply bg-[#131212];
+}
+
+html.dark .breadcrumb ol {
+  @apply text-slate-200;
+}
+
+html.dark .markdowns-header h1 {
+  @apply text-white;
+}
+
+html.dark h2.info-index {
+  @apply text-gray-300;
+}
+
+html.dark .directory-list .arrow-up {
+  @apply text-gray-600 duration-300 group-hover:scale-125 transition-all;
+}
+
+html.dark .directory-list .folder {
+  @apply border-zinc-600;
+}
+html.dark .directory-list .folder-icon {
+  @apply text-[#2aff7b];
+}
+
+html.dark .directory-list .folder:hover {
+  @apply border-[#2aff7b];
+}
+
+html.light .directory-list .folder-title {
+  @apply text-gray-800;
 }
