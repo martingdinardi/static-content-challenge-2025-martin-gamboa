@@ -52,6 +52,9 @@ html.dark .prose {
   @apply text-gray-200;
 }
 
+.prose h4 {
+  @apply my-6 text-xl;
+}
 .prose h1,
 h1 {
   @apply text-4xl font-bold mb-4 text-[#2aff7b];
