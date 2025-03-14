@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Card from "../Card";
+import Folder from "../Folder";
 import { DirectoryInfo } from "@/lib/types";
 import { formatDate } from "@/lib/utils";
 import {
@@ -10,32 +10,31 @@ import {
 
 interface DirectoryListProps {
   directories: DirectoryInfo[];
-  parentTitle?: string;
-  showTitle?: boolean;
+  title?: string;
 }
 
-export const DirectoryList = ({
-  directories,
-  showTitle = true,
-}: DirectoryListProps) => {
+export const DirectoryList = ({ directories, title }: DirectoryListProps) => {
   return (
     <div className="space-y-6">
-      {showTitle}
+      <p className="py-2 text-xl">
+        Explore all the posts and updates, from the latest stories to timeless
+        insights in <span className="font-bold">{title}</span>
+      </p>
 
       {directories.length > 0 && (
         <>
           {directories.map((dir) => (
             <Link href={`/markdowns/${dir.path}`} key={dir.path}>
-              <Card className="overflow-hidden flex border rounded-xl items-center justify-between py-4 px-6 w-fit gap-12 border-zinc-600 group hover:scale-105 transition-all duration-500">
-                <Card.Header className="flex items-center w-max">
+              <Folder className="overflow-hidden flex border rounded-xl items-center justify-between py-4 px-6 w-fit gap-12 border-zinc-600 group hover:border-[#2aff7b] hover:scale-105 transition-all duration-500">
+                <Folder.Header className="flex items-center w-max">
                   <IconFolder className="h-5 w-5 text-[#2aff7b] mr-3 flex-shrink-0" />
-                  <Card.Title>{dir.title}</Card.Title>
-                </Card.Header>
-                <Card.Content>
+                  <Folder.Title>{dir.title}</Folder.Title>
+                </Folder.Header>
+                <Folder.Content>
                   {dir.description && (
-                    <Card.Description className="mb-4 line-clamp-2">
+                    <Folder.Description className="mb-4 line-clamp-2">
                       {dir.description}
-                    </Card.Description>
+                    </Folder.Description>
                   )}
                   <div className="flex justify-between items-center">
                     {dir.date && (
@@ -64,8 +63,8 @@ export const DirectoryList = ({
                       <IconArrowUpRight className="h-6 w-6 text-indigo-50 duration-300 group-hover:scale-125 transition-all" />
                     </div>
                   </div>
-                </Card.Content>
-              </Card>
+                </Folder.Content>
+              </Folder>
             </Link>
           ))}
         </>

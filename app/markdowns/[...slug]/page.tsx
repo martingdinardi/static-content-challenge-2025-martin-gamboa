@@ -33,7 +33,10 @@ export default async function Page(props: PageProps) {
         )}
         {hasSubdirectories && subdirectories.length > 0 && (
           <div className={content ? "mt-8 pt-6 border-t" : ""}>
-            <DirectoryList directories={subdirectories} />
+            <DirectoryList
+              directories={subdirectories}
+              title={metadata.title}
+            />
           </div>
         )}
       </div>

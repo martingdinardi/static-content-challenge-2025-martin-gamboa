@@ -1,7 +1,8 @@
 import React from "react";
+import Home from "./components/Home";
 
 function Markdowns() {
-  return <div>Markdowns</div>;
+  return <Home />;
 }
 
 export default Markdowns;

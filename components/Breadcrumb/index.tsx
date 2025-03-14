@@ -8,7 +8,7 @@ interface BreadcrumbProps {
 export const Breadcrumb = ({ paths }: BreadcrumbProps) => {
   return (
     <nav aria-label="Breadcrumb" className="mb-6 bg-[#0e0e0e] p-3 rounded-lg ">
-      <ol className="flex flex-wrap items-center text-sm text-gray-600">
+      <ol className="flex flex-wrap items-center text-sm text-slate-200">
         {paths.map((item, index) => (
           <li key={item.path} className="flex items-center">
             {index > 0 && (

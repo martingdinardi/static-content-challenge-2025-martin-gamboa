@@ -41,8 +41,8 @@ export const MarkdownsClientNavbar = ({
               <Link
                 key={section.slug}
                 href={`/markdowns/${section.slug}`}
-                className={`inline-block transition duration-200 hover:scale-110 hover:text-[#2aff7b] text-lg ${
-                  active ? "text-[#2aff7b] scale-110" : ""
+                className={`inline-block transition duration-200 hover:scale-105 hover:text-[#2aff7b] text-lg ${
+                  active ? "text-[#2aff7b] scale-105" : ""
                 }`}
               >
                 {section.title}
