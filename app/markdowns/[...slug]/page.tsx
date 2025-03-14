@@ -43,7 +43,8 @@ export default async function Page(props: PageProps) {
               </div>
             )}
           </div>
-          <div className="hidden xl:flex xl:w-1/4">
+          <div className="hidden xl:flex xl:flex-col xl:w-1/4">
+            <h3 className="text-xl font-semibold mb-5">Recommended Articles</h3>
             <RecommendedArticles />
           </div>
         </div>

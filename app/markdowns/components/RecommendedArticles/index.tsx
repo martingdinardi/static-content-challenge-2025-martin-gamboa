@@ -17,8 +17,6 @@ export const RecommendedArticles = async ({
 
   return (
     <div className="w-full">
-      <h3 className="text-xl font-semibold mb-5">Recommended Articles</h3>
-
       <div className="space-y-4">
         {articles.map((article) => (
           <div

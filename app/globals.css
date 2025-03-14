@@ -114,7 +114,7 @@ html.dark .prose a {
 }
 
 html.light .prose a {
-  @apply text-green-600;
+  @apply text-blue-600;
 }
 
 html.dark .read-more {
@@ -177,8 +177,8 @@ html.light footer.bg-\[\#0e0e0e\] {
   background-color: #f1f1f1;
 }
 
-.markdowns-nav .active {
-  @apply text-[#2aff7b] scale-110;
+html.dark .markdowns-nav .active {
+  @apply text-[#2aff7b];
 }
 
 html.light .markdowns-nav .active,
@@ -228,6 +228,14 @@ html.dark .directory-list .folder-icon {
 
 html.dark .directory-list .folder:hover {
   @apply border-[#2aff7b];
+}
+
+html.dark .hamburguer-nav {
+  @apply border-[#0a0a0a] bg-[#0a0a0a];
+}
+
+html.dark .hamburguer-nav .active {
+  @apply border-[#0a0a0a] bg-[#0a0a0a];
 }
 
 html.light .directory-list .folder-title {

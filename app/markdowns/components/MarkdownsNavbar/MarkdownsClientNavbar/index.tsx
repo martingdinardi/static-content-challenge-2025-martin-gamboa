@@ -49,7 +49,7 @@ export const MarkdownsClientNavbar = ({
                     key={section.slug}
                     href={`/markdowns/${section.slug}`}
                     className={`inline-block transition duration-200 hover:scale-110 hover:text-[#2aff7b] text-lg ${
-                      active ? "active scale-105" : ""
+                      active ? "active scale-110" : ""
                     }`}
                   >
                     {section.title}
@@ -74,7 +74,7 @@ export const MarkdownsClientNavbar = ({
         </div>
       </div>
       {isMenuOpen && sections.length > 0 && (
-        <div className="pb-4 border-t absolute bg-gray-800 w-full border-zinc-800">
+        <div className="hamburguer-nav pb-4 border-t absolute bg-[#f9f9f9] w-full">
           <div className="flex flex-col space-y-2 pt-2 gap-1 mt-4">
             {sections.map((section) => {
               const active = isActive(pathname, section.slug);
@@ -83,7 +83,7 @@ export const MarkdownsClientNavbar = ({
                   key={section.slug}
                   href={`/markdowns/${section.slug}`}
                   className={`inline-block transition  hover:text-[#2aff7b] text-lg ${
-                    active ? "text-[#2aff7b]" : ""
+                    active ? "active" : ""
                   }`}
                   onClick={handleOpen}
                 >

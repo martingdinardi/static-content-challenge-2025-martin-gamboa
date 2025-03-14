@@ -1,3 +1,4 @@
+"use client";
 import { Metadata } from "@/lib/types";
 
 interface ContentRendererProps {
