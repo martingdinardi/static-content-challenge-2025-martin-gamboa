@@ -36,7 +36,6 @@ The system reads Markdown files from the `content` folder and generates HTML pag
 
 ```content/
 ├─ category/
-│  ├─ index.md        # Main content file
 │  └─ subcategory/    # Nested content
 │     └─ index.md     # Your Markdown!
 ```
