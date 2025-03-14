@@ -6,5 +6,5 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ children, className = "" }: NavbarProps) => {
-  return <nav className={`py-4 ${className}`}>{children}</nav>;
+  return <nav className={`py-4 relative ${className}`}>{children}</nav>;
 };

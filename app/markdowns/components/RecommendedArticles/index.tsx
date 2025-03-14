@@ -31,7 +31,7 @@ export const RecommendedArticles = async ({
                   <h3 className="text-lg font-medium">{article.title}</h3>
 
                   {article.description && (
-                    <p className="text-gray-600 mt-1 line-clamp-2">
+                    <p className="text-gray-400 mt-1 line-clamp-2">
                       {article.description}
                     </p>
                   )}
