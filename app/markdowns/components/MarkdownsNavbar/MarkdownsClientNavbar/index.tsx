@@ -41,7 +41,7 @@ export const MarkdownsClientNavbar = ({
         </Link>
         <div className="flex gap-8">
           {!isMobile && (
-            <div className="space-x-4">
+            <div className="space-x-4 hidden md:flex">
               {navbarSections.map((section) => {
                 const active = isActive(pathname, section.slug);
                 return (

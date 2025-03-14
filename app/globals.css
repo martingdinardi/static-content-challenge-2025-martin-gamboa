@@ -141,7 +141,7 @@ html.light .prose code {
 }
 
 .prose pre {
-  @apply p-4 rounded my-4 overflow-x-auto;
+  @apply p-4 rounded my-4 overflow-x-auto whitespace-break-spaces;
 }
 
 html.dark .prose pre {

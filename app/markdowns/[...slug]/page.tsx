@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: tParams }) {
       <div className="mt-4">
         <Breadcrumb paths={breadcrumbPaths} />
         <div className="flex justify-between py-8">
-          <div className="max-w-4xl">
+          <div className="w-full max-w-4xl">
             {content ? (
               <MarkdownRenderer content={content} metadata={metadata} />
             ) : (

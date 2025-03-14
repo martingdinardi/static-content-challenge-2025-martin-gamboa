@@ -13,7 +13,7 @@ function Footer() {
       <div className="flex space-x-4">
         <Link
           href="https://github.com/martingdinardi"
-          className="flex items-center justify-center space-x-1"
+          className="hidden md:flex items-center justify-center space-x-1"
           target="_blank"
         >
           <IconBrandGithub size={24} />
